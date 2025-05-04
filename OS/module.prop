@@ -1,0 +1,6 @@
+id=SSF
+name=Smart SurfaceFilnger
+version=v1.0.1
+versionCode=101
+author=@UnixeID
+description=Smart SurfaceFlinger is a script that is designed to automatically detect hz according to renderer duration 

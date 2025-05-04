@@ -1,0 +1,20 @@
+# not allowed to design without official permission from the script creator 
+
+[package]
+name = "smart_SurfaceFlinger"
+version = "1.0.1"
+edition = "2024"
+
+description = "A utility for optimizing SurfaceFlinger settings on Android devices."
+authors = ["@UnixeID <betrix322@gmail.com>"]  
+license = "MIT"
+homepage = "https://github.com/Betrix-ID"  
+repository = "https://github.com/username/smart_SurfaceFlinger"  
+documentation = "https://developer.android.com/topic/performance/vitals/slow-session?hl=id"
+
+[package.metadata]
+telegram_channel = "https://t.me/Yeye_PID"  
+
+[profile.release]
+opt-level = 3
+strip = "symbols"
