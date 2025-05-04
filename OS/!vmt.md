@@ -54,28 +54,28 @@ Setelah itu, script akan menampilkan notifikasi (via `cmd notification`) untuk m
   `> UI smoothness`  
   `> Battery vs Performance tuning`
 
-# Note :
+### Note :
     $ shell script ini tidak meyebabkan Aplikasi mana pun Crash dan lag dikerenakan sudah saya susun seteliti mungkin agar tidak bedampak pada aplikasi manapun dill..
                         
-# Inspired Script :
+### Inspired Script :
     $ @RiProG ( Muhammad Rizki )
 
-# Penanggung Jawab 100% By :
+### Penanggung Jawab 100% By :
 - @UnixeID | Telegram
 - Betrix-ID   | Github
 
-# Channel Telegram and Github :
+### Channel Telegram and Github :
 - https://t.me/Yeye_PID
 - https://github.com/Betrix-ID
 
-# install :
+### install :
 Ekstrak dulu ' zip ' Ke internal
 Lalu Jalankan Perintah down Here :
 sh /sdcard/int/run.sh --help
 
-# Uninstall : Rebot youre phone ,matikan ulang hp kalian dill*
+### Uninstall : Rebot youre phone ,matikan ulang hp kalian dill*
 
-# Disclemoer Efek :
+### Disclemoer Efek :
     $ Maaf jika script nya tidak begitu Berefek pada device kalian kerena tiap Device, Kernel And Versi Andorid Berbeda-beda Susah membuat script nya bekerja 100% dill..
 
-# ⚠️ Especially for those who want to use my script in your Module, please contact me & add credit @UnixeID
+### ⚠️ Especially for those who want to use my script in your Module, please contact me & add credit @UnixeID
