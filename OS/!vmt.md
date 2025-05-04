@@ -1,29 +1,59 @@
 # Date : 25 - 04 - 2025          
-        [ Angle Connector - Nonroot ]
+      [ Smart SurfaceFlinger - Nonroot ]
                    Author 
      Telegram @UnixeID | Github Betrix-ID
-                version : 1.0
+                version : 1.0.1
          ////////////////\\\\\\\\\\\\\\\\
             install with > Brevent
             
-  ** ` Disclaimer: ` **
- <Script ini ditujukan untuk penggunaan pribadi guna mengelola renderer grafis di Android. Segala risiko penggunaan ditanggung pengguna. Root mungkin diperlukan.>
+### ` Disclaimer `
+Script ini dibuat untuk kebutuhan **pengaturan dan tuning performa grafis Android** melalui SurfaceFlinger. Tujuan utamanya adalah memberikan kontrol terhadap *duration timing* dan *refresh rate* sistem, yang berdampak langsung pada responsivitas tampilan.
 
- ** ` Mode Optimasi: ` **
- <Sebuah utilitas ringan untuk mengatur renderer grafis Android melalui driver ANGLE. Dengan memanfaatkan pengaturan sistem seperti pm dan settings put, script ini memungkinkan aplikasi menggunakan Vulkan meskipun secara default hanya mendukung OpenGLES. Proses ini membantu meningkatkan efisiensi GPU, memperluas kompatibilitas grafis, dan memberikan pengalaman visual yang lebih halus — terutama saat bermain game atau menjalankan aplikasi berat secara grafis..>
+Penggunaan script ini **ditujukan untuk pengguna berpengalaman**. Root access **kemungkinan besar dibutuhkan**, dan segala risiko ditanggung sendiri.
 
- ** ` Efek yang Diperoleh: ` **
-  [1. Performa aplikasi meningkat.]
-  [2. Tampilan lebih halus dan responsif.]
-  [3. Penggunaan resource lebih efisien.]
-  [4. Kompatibilitas aplikasi jadi lebih luas.]
-  [5. Konsumsi daya bisa lebih hemat.]
-> Efek bergantung pada perangkat & sistem.
+---
 
-# Recomened :
-    $ Gaming
-    $ Dayli
-    
+### ` Fungsi Utama `
+Script ini menyesuaikan berbagai properti SurfaceFlinger secara otomatis maupun manual untuk mencapai **frekuensi refresh** yang diinginkan, seperti:
+
+- `surface_flinger120()` — atur ke 120Hz (maksimal kelancaran visual).
+- `surface_flinger90()` — atur ke 90Hz (seimbang performa dan baterai).
+- `surface_flinger60()` — atur ke 60Hz (stabil dan hemat daya).
+- `monitor_auto()` — ambil durasi langsung dari log SurfaceFlinger lalu sesuaikan secara otomatis.
+- `kill()` — reset semua pengaturan ke default.
+
+---
+
+### ` Mekanisme Kerja `
+Script menghitung nilai **duration (ns)** berdasarkan target Hz (misal: 1_000_000_000 / 120 untuk 120Hz), lalu menyebarkannya ke berbagai properti Android melalui `setprop`:
+
+- `debug.sf.phaseoffset_app`
+- `debug.sf.vsync_period`
+- `debug.sf.duration_app`, dll.
+
+Setelah itu, script akan menampilkan notifikasi (via `cmd notification`) untuk memberi tahu pengguna bahwa perubahan telah diterapkan.
+
+---
+
+### ` Efek Positif `
+- Tampilan lebih **smooth & responsif**
+- Mengurangi **lag grafis** di aplikasi berat
+- Menyesuaikan FPS target dengan **akurasi tinggi**
+- Potensi peningkatan **efisiensi daya**
+- Kontrol penuh terhadap timing SurfaceFlinger
+
+> Hasil bisa bervariasi tergantung device, ROM, dan patch keamanan.  
+> Direkomendasikan untuk perangkat rooted dan paham risiko tuning grafis.
+
+---
+
+### ` Rekomendasi Penggunaan `
+- Cocok untuk **pengguna advanced** yang ingin mengoptimalkan refresh rate.
+- Sangat ideal untuk:  
+  `> Gaming performance`  
+  `> UI smoothness`  
+  `> Battery vs Performance tuning`
+
 # Note :
     $ shell script ini tidak meyebabkan Aplikasi mana pun Crash dan lag dikerenakan sudah saya susun seteliti mungkin agar tidak bedampak pada aplikasi manapun dill..
                         
