@@ -1,21 +1,21 @@
 > ![US text](/OS/img/IFS.png)
 
-<div align="center" style="font-family: 'Segoe UI', sans-serif; padding: 20px; color: #333;">
-  <h2 style="margin-bottom: 5px;">Like my work?</h2>
-  <p style="margin-top: 0; font-size: 14px;">Follow, support, or treat me a coffee</p>
+<div style="font-family: 'Poppins', sans-serif; text-align: center; padding: 40px 20px; background: #f9f9f9; border-radius: 16px; max-width: 500px; margin: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.05);">
+  <h2 style="font-weight: 600; margin-bottom: 10px; color: #111;">Support My Work</h2>
+  <p style="margin-top: 0; color: #555; font-size: 14px;">Follow me, donate, or just say hi!</p>
 
-  <div style="margin-top: 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-    <a href="https://www.instagram.com/pai_calll?igsh=OGZnYmZ5OGdiMG9r" target="_blank">
-      <img src="https://img.shields.io/badge/Instagram-fff?style=flat&logo=instagram&logoColor=#E4405F" alt="Instagram">
+  <div style="margin-top: 25px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;">
+    <a href="https://www.instagram.com/pai_calll?igsh=OGZnYmZ5OGdiMG9r" target="_blank" style="text-decoration: none;">
+      <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" title="Instagram">
     </a>
-    <a href="https://www.tiktok.com/@pai.call" target="_blank">
-      <img src="https://img.shields.io/badge/TikTok-fff?style=flat&logo=tiktok&logoColor=#000" alt="TikTok">
+    <a href="https://www.tiktok.com/@pai.call" target="_blank" style="text-decoration: none;">
+      <img src="https://img.icons8.com/fluency/48/tiktok.png" alt="TikTok" title="TikTok">
     </a>
-    <a href="https://saweria.co/Uniccc" target="_blank">
-      <img src="https://img.shields.io/badge/Saweria-fff?style=flat&logo=saweria&logoColor=#F9A825" alt="Saweria">
+    <a href="https://saweria.co/Uniccc" target="_blank" style="text-decoration: none;">
+      <img src="https://img.icons8.com/fluency/48/coffee.png" alt="Saweria" title="Saweria / Coffee">
     </a>
-    <a href="https://t.me/Yeye_PID" target="_blank">
-      <img src="https://img.shields.io/badge/Telegram-fff?style=flat&logo=telegram&logoColor=#0088cc" alt="Telegram">
+    <a href="https://t.me/Yeye_PID" target="_blank" style="text-decoration: none;">
+      <img src="https://img.icons8.com/fluency/48/telegram-app.png" alt="Telegram" title="Telegram">
     </a>
   </div>
 </div>
