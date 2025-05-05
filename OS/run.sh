@@ -5,12 +5,12 @@ if [ "$(id -u)" -ne 0 ] && [ "$(id -u)" -ne 2000 ]; then
    exit 1
 fi
 #Chking cpu.abi
-     if [ ! -f /sdcard/int/source/target ]; then
+     if [ ! -f /sdcard/OS/source/target ]; then
 	    architecture=$(getprop ro.product.cpu.abi)
 	  if [ "$architecture" = "arm64-v8a" ]; then
-		cp /sdcard/int/source/target/debug/smart_SurfaceFlinger /sdcard/int/SSD
+		cp /sdcard/OS/source/target/debug/smart_SurfaceFlinger /sdcard/OS/SSD
 	elif [ "$architecture" = "armeabi-v7a" ]; then
-		cp /sdcard/int/source/target/release/smart_SurfaceFlinger /sdcard/int/SSD
+		cp /sdcard/OS/source/target/release/smart_SurfaceFlinger /sdcard/OS/SSD
 	fi
   fi
 #smart notifications
@@ -46,6 +46,9 @@ set +x
      elif [ "$1" = "-L" ]; then
           shell "Applying SurfaceFlinger for duration 900fps 1-4 seconds..."
           /data/local/tmp/SSD -L
+     elif [ "$1" = "-O" ]; then
+          shell "Applying SurfaceFlinger for duration 600fps 1-4 seconds..."
+          /data/local/tmp/SSD -O
      elif [ "$1" = "-P" ]; then
           shell "Applying SurfaceFlinger for duration auto smart Fps 1-4 seconds..."
           /data/local/tmp/SSD -P
