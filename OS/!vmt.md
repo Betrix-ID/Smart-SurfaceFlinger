@@ -1,81 +1,57 @@
-# Date : 05 - 05 - 2025          
-      [ Smart SurfaceFlinger - Nonroot ]
+# Date : 09 - 05 - 2025          
+    [ Automatic SurfaceFlinger - Nonroot ]
                    Author 
      Telegram @UnixeID | Github Betrix-ID
-                version : 1.0.1
+                version : 1.0
          ////////////////\\\\\\\\\\\\\\\\
             install with > Brevent
             
-### ` Disclaimer `
-Script ini dibuat untuk kebutuhan **pengaturan dan tuning performa grafis Android** melalui SurfaceFlinger. Tujuan utamanya adalah memberikan kontrol terhadap *duration timing* dan *refresh rate* sistem, yang berdampak langsung pada responsivitas tampilan.
+   ** ` Disclaimer: ` **
+- Utilitas ini dirancang untuk mengelola dan mengoptimalkan durasi rendering di SurfaceFlinger sesuai kebutuhan pengguna.>
 
-Penggunaan script ini **ditujukan untuk pengguna berpengalaman**. Root access **kemungkinan besar dibutuhkan**, dan segala risiko ditanggung sendiri.
+ ** ` Mode Optimasi: ` **
+- Mengoptimalkan durasi rendering frame di SurfaceFlinger untuk meningkatkan kinerja sistem Android. Dengan menyesuaikan pengaturan frame dan mengurangi latensi, utilitas ini bertujuan memberikan pengalaman visual yang lebih halus dan responsif. Ini juga meningkatkan stabilitas perangkat saat menjalankan aplikasi berat seperti game dan multimedia.
 
----
+ ** ` Efek yang Diperoleh: ` **
+  [1. Durasi rendering frame yang lebih optimal.]
+  [2. Pengalaman visual yang lebih halus dan responsif.]
+  [3. Peningkatan efisiensi penggunaan sumber daya.]
+  [4. Kompatibilitas dengan berbagai aplikasi meningkat.]
+  [5. Penghematan konsumsi daya yang lebih baik.]
+            .: Effect :. 
+ [.1 Menghasilkan lebih banyak frames per second (FPS) dan mengurangi latensi (lag) dalam game ]
+ [2. Menghindari overclocking dan tearing ]
+ [3. Meningkatkan kinerja dan responsiveness pada game dan beberapa aplikasi lainnya ]
+ [4. Meningkatkan frekuensi frame ]
+> Efek dapat bervariasi tergantung pada perangkat dan konfigurasi sistem.
 
-### ` Fungsi Utama `
-Script ini menyesuaikan berbagai properti SurfaceFlinger secara otomatis maupun manual untuk mencapai **frekuensi refresh** yang diinginkan, seperti:
 
-- `surface_flinger120()` — atur ke 120Hz (maksimal kelancaran visual).
-- `surface_flinger90()` — atur ke 90Hz (seimbang performa dan baterai).
-- `surface_flinger60()` — atur ke 60Hz (stabil dan hemat daya).
-- `monitor_auto()` — ambil durasi langsung dari log SurfaceFlinger lalu sesuaikan secara otomatis.
-- `kill()` — reset semua pengaturan ke default.
-
----
-
-### ` Mekanisme Kerja `
-Script menghitung nilai **duration (ns)** berdasarkan target Hz (misal: 1_000_000_000 / 120 untuk 120Hz), lalu menyebarkannya ke berbagai properti Android melalui `setprop`:
-
-- `debug.sf.phaseoffset_app`
-- `debug.sf.vsync_period`
-- `debug.sf.duration_app`, dll.
-
-Setelah itu, script akan menampilkan notifikasi (via `cmd notification`) untuk memberi tahu pengguna bahwa perubahan telah diterapkan.
-
----
-
-### ` Efek Positif `
-- Tampilan lebih **smooth & responsif**
-- Mengurangi **lag grafis** di aplikasi berat
-- Menyesuaikan FPS target dengan **akurasi tinggi**
-- Potensi peningkatan **efisiensi daya**
-- Kontrol penuh terhadap timing SurfaceFlinger
-
-> Hasil bisa bervariasi tergantung device, ROM, dan patch keamanan.  
-> Direkomendasikan untuk perangkat rooted dan paham risiko tuning grafis.
-
----
-
-### ` Rekomendasi Penggunaan `
-- Cocok untuk **pengguna advanced** yang ingin mengoptimalkan refresh rate.
-- Sangat ideal untuk:  
-  `> Gaming performance`  
-  `> UI smoothness`  
-  `> Battery vs Performance tuning`
-
-### Note :
+# Recomened :
+    $ Gaming
+    $ Dayli
+    
+# Note :
     $ shell script ini tidak meyebabkan Aplikasi mana pun Crash dan lag dikerenakan sudah saya susun seteliti mungkin agar tidak bedampak pada aplikasi manapun dill..
                         
-### Inspired Script :
+# Inspired Script :
     $ @RiProG ( Muhammad Rizki )
 
-### Penanggung Jawab 100% By :
+# Penanggung Jawab 100% By :
 - @UnixeID | Telegram
 - Betrix-ID   | Github
 
-### Channel Telegram and Github :
+# Channel Telegram and Github :
 - https://t.me/Yeye_PID
 - https://github.com/Betrix-ID
 
-### install :
+# install :
 Ekstrak dulu ' zip ' Ke internal
 Lalu Jalankan Perintah down Here :
-sh /sdcard/int/run.sh --help
+sh /sdcard/venlib/run.sh --help
 
-### Uninstall : Rebot youre phone ,matikan ulang hp kalian dill*
+# Uninstall : restart your phone / Matikan Ulang device kalian dill...
 
-### Disclemoer Efek :
+# Disclemoer Efek :
     $ Maaf jika script nya tidak begitu Berefek pada device kalian kerena tiap Device, Kernel And Versi Andorid Berbeda-beda Susah membuat script nya bekerja 100% dill..
 
-### ⚠️ Especially for those who want to use my script in your Module, please contact me & add credit @UnixeID
+# ⚠️ Especially for those who want to use my script in your Module, please contact me & add credit @UnixeID

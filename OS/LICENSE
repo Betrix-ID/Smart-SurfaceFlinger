@@ -1,0 +1,66 @@
+                    GNU GENERAL PUBLIC LICENSE
+                         Version 3, 29 June 2007
+               https://www.gnu.org/licenses/gpl-3.0.html
+
+Copyright (C) 2025 @UnixeID
+
+        This license grants you the freedom to use, modify, and 
+        distribute this software and derivative works thereof, under 
+        the following conditions: 
+        
+        1. Freedom of Use and Distribution You may run, study, 
+           and use this software for any purpose. 
+
+        2. Modification and Distribution of Derivative Works You may modify 
+           the source code and distribute your modifications, provided that you 
+           also distribute them under this GPL v3 license. 
+
+        3. Source Code Distribution If you distribute the software (either 
+           original or modified), you must include the source code or provide 
+           a way to obtain it. 
+
+        4. Transparency of Changes You must include a record of the 
+           changes you have made to the software, with clear and open 
+           explanations. 
+
+        5. Patent Protection You grant a patent license for your contributions 
+           to anyone who obtains the software under this license. 
+
+        6. No Additional Restrictions You may not add additional legal 
+           restrictions that conflict with the terms of this license. 
+
+MODIFICATIONS:
+  - Added process tracking for active games to manage preload behavior.
+  - Implemented memory lock and advisory to prioritize game asset loading.
+  - Included custom notification system via Android shell commands.
+  - Optimized file handling and background execution for preload daemon.
+
+DISCLAIMER OF WARRANTY AND LIABILITY:
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” 
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE 
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+  POSSIBILITY OF SUCH DAMAGE.
+
+REDISTRIBUTION CONDITIONS:
+  Redistribution and use in source and binary forms, with or without modification, 
+  are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice, 
+     this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright notice, 
+     this list of conditions and the following disclaimer in the documentation 
+     and/or other materials provided with the distribution.
+
+  3. Neither the name of the copyright holder nor the names of its contributors 
+     may be used to endorse or promote products derived from this software 
+     without specific prior written permission.
+
+This license is intended to ensure your freedom and the freedom of other users of this software.
