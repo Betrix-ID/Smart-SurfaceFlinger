@@ -1,21 +1,22 @@
+// It is forbidden to change without official permission from the Module maker. 
+
 use std::{process::Command, thread::sleep, time::Duration};
 
 fn shell(message: &str, fps: i32) {
     let command = format!(
-        "cmd notification post -S bigtext -t '♨️ Smart SurfaceFlinger' 'Tag' '{} {} Hz' > /dev/null 2>&1",
+        "cmd notification post -S bigtext -t '♨️ Automatic SurfaceFllinger' 'Tag' '{} {} Hz' > /dev/null 2>&1",
         message, fps
     );
     
-    let _ = Command::new("sh")
-        .arg("-c")
-        .arg(command)
-        .status();
+    if let Err(e) = Command::new("sh").arg("-c").arg(command).status() {
+        eprintln!("Failed to execute shell command: {}", e);
+    }
 }
 
 fn get_duration() -> i32 {
     let output = Command::new("sh")
         .arg("-c")
-        .arg("dumpsys SurfaceFlinger | tr -d ' ' | grep -Eio 'appduration[^ns]+' | cut -f2 -d: | sort | tail -n1")
+        .arg("dumpsys SurfaceFlinger | awk '/refresh-rate/ { gsub(/[^0-9.]+/, \"\", $3); printf(\"%.0f\\n\", $3) }'")
         .output()
         .expect("Failed to read duration");
 
@@ -24,33 +25,28 @@ fn get_duration() -> i32 {
 }
 
 fn run_cmd(command: &str) {
-    let _ = Command::new("sh")
-        .arg("-c")
-        .arg(command)
-        .status()
-        .expect("Failed to execute command");
+    if let Err(e) = Command::new("sh").arg("-c").arg(command).status() {
+        eprintln!("Failed to execute command: {}", e);
+    }
 }
 
 fn apply_props(duration: i32) {
     let commands = [
         format!("dumpsys SurfaceFlinger --timestats -clear -disable"),
-        format!("setprop debug.sf.phaseoffset_app {}", duration),
-        format!("setprop debug.sf.present_offset -{}", duration),
-        format!("setprop debug.sf.phaseoffset {}", duration),
-        format!("setprop debug.sf.vsync_period {}", duration),
-        format!("setprop debug.sf.early_phaseoffset {}", duration),
-        format!("setprop debug.sf.early_phaseoffset_app {}", duration),
-        format!("setprop debug.sf.early_duration {}", duration),
-        format!("setprop debug.sf.early_duration_app {}", duration),
-        format!("setprop debug.sf.glearly_phaseoffset {}", duration),
-        format!("setprop debug.sf.glearly_phaseoffset_app {}", duration),
-        format!("setprop debug.sf.glearly_duration {}", duration),
-        format!("setprop debug.sf.glearly_duration_app {}", duration),
-        format!("setprop debug.hwc.min_duration {}", duration),
-        format!("setprop debug.sf.duration {}", duration),
-        format!("setprop debug.sf.duration_app {}", duration),
+        format!("setprop debug.sf.late.sf.duration  {}", duration),
+        format!("setprop debug.sf.late.app.duration {}", duration),
+        format!("setprop debug.sf.early.sf.duration {}", duration),
+        format!("setprop debug.sf.early.app.duration {}", duration),
+        format!("setprop debug.sf.earlyGl.sf.duration {}", duration),
+        format!("setprop debug.sf.earlyGl.app.duration  {}", duration),
+        format!("setprop debug.sf.hwc.min.duration {}", duration),
+        format!("setprop debug.vsync_event_phase_offset_ns {}", duration),
+        format!("setprop debug.vsync_sf_event_phase_offset_ns  {}", duration),
+        format!("setprop debug.sf.phase_offset_threshold_for_next_vsync_ns {}", duration),
+        format!("setprop debug.sf.latch_unsignaled false "),
+        format!("setprop debug.sf.disable_backpressure 1 "),
+        format!("setprop debug.sf.use_phase_offsets_as_durations 1"),
     ];
-
     for cmd in commands {
         run_cmd(&cmd);
     }
@@ -58,14 +54,24 @@ fn apply_props(duration: i32) {
 
 pub fn monitor_auto() {
     println!("\nDescription:\n  Automatically set duration from SurfaceFlinger output.");
-    let duration = get_duration();
-    println!("Duration: {} ns", duration);
-    apply_props(duration);
-    
-    // Notifikasi dengan fps
-    let fps = 1_000_000_000 / duration;
-    sleep(Duration::from_secs(2));
-    shell("Duration set to", fps);
+    let mut last_fps = -1;
+
+    loop {
+        let duration = get_duration();
+        if duration > 0 {
+            let fps = 1_000_000_000 / duration; // Kalkulasi fps
+
+            if fps != last_fps {
+                sleep(Duration::from_secs(2));
+                println!("Duration: {} ns ({} Hz)", duration, fps);
+                apply_props(fps);
+                shell("Duration set to", duration);
+                last_fps = fps;
+            }
+        } else {
+            eprintln!("Invalid duration received: {}", duration);
+        }
+    }
 }
 
 pub fn surface_flinger_custom(target_hz: i32) {

@@ -9,8 +9,8 @@ Options:
   -d           Activate SurfaceFlinger duration to 120 ns for smoother animations.
   -L           Activate SurfaceFlinger duration to 90 ns for improved performance.
   -O           Activate SurfaceFlinger duration to 60 ns for standard refresh rate.
-  -P           Activate smart dumpsys to automatically adjust based on current device settings.
-  -R           Reset SurfaceFlinger profile to default settings, requires reboot for changes to take effect.
+  -P           Activate smart SurfaceFlinger to automatically adjust based on current device settings.
+  -R           Show Reset SurfaceFlinger profile to default settings, requires reboot for changes to take effect.
   -h, --help   Show this help message and exit.
 
 Description:
